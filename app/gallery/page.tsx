@@ -6,6 +6,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SafeImage from "@/components/ui/SafeImage";
 import { galleryImages } from "@/data/services";
 
 const categories = ["All", "Hair", "Skin", "Nails", "Bridal"];
@@ -23,7 +24,7 @@ export default function GalleryPage() {
         <>
             {/* Hero */}
             <section className="relative h-[50svh] min-h-[320px] flex items-center justify-center overflow-hidden">
-                <Image
+                <SafeImage
                     src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1400&q=80"
                     alt="Our gallery"
                     fill
@@ -65,8 +66,8 @@ export default function GalleryPage() {
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
                                     className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${activeCategory === cat
-                                            ? "bg-primary text-white shadow-md"
-                                            : "bg-white text-text-light hover:bg-cream-dark"
+                                        ? "bg-primary text-white shadow-md"
+                                        : "bg-white text-text-light hover:bg-cream-dark"
                                         }`}
                                 >
                                     {cat}
@@ -75,48 +76,58 @@ export default function GalleryPage() {
                         </div>
                     </AnimatedSection>
 
-                    {/* Masonry Grid */}
-                    <motion.div
-                        layout
-                        className="columns-2 md:columns-3 lg:columns-4 gap-3 sm:gap-4"
-                    >
+                    {/* Bento Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 grid-auto-flow-dense">
                         <AnimatePresence mode="popLayout">
-                            {filtered.map((img, i) => (
-                                <motion.div
-                                    key={img.src}
-                                    layout
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.9 }}
-                                    transition={{ duration: 0.4, delay: i * 0.05 }}
-                                    className="break-inside-avoid mb-3 sm:mb-4"
-                                >
+                            {filtered.map((img, i) => {
+                                // Bento spans logic (only when "All" is selected for best visual pattern)
+                                const isAll = activeCategory === "All";
+                                let spanClass = "";
+                                if (isAll) {
+                                    if (i === 0 || i === 9 || i === 17) spanClass = "md:col-span-2 md:row-span-2";
+                                    else if (i === 3 || i === 12) spanClass = "md:row-span-2";
+                                    else if (i === 5 || i === 14) spanClass = "md:col-span-2";
+                                }
+
+                                return (
                                     <motion.div
-                                        whileHover={{ scale: 1.02 }}
-                                        onClick={() => setLightbox(i)}
-                                        className={`relative rounded-[var(--radius-md)] overflow-hidden cursor-pointer group ${i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/3]"
-                                            }`}
+                                        key={img.src}
+                                        layout
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.9 }}
+                                        transition={{ duration: 0.4, delay: i * 0.05 }}
+                                        className={`${spanClass}`}
                                     >
-                                        <Image
-                                            src={img.src}
-                                            alt={img.alt}
-                                            fill
-                                            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                            loading="lazy"
-                                            placeholder="blur"
-                                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJYvDbTrLJlEJZZJjHGOrNsNyaKKBRTvSl0Yz//2Q=="
-                                        />
-                                        <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/30 transition-colors duration-300 flex items-center justify-center">
-                                            <span className="text-white text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
-                                                {img.category}
-                                            </span>
-                                        </div>
+                                        <motion.div
+                                            whileHover={{ scale: 1.02 }}
+                                            onClick={() => setLightbox(i)}
+                                            className="relative rounded-[var(--radius-lg)] overflow-hidden cursor-pointer group h-full min-h-[200px] sm:min-h-[250px]"
+                                        >
+                                            <SafeImage
+                                                src={img.src}
+                                                alt={img.alt}
+                                                fill
+                                                sizes={spanClass.includes("col-span-2") ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"}
+                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                                loading="lazy"
+                                                placeholder="blur"
+                                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJYvDbTrLJlEJZZJjHGOrNsNyaKKBRTvSl0Yz//2Q=="
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                                <span className="text-primary-light text-[10px] font-bold tracking-[0.2em] uppercase mb-1">
+                                                    {img.category}
+                                                </span>
+                                                <h3 className="text-white text-base font-semibold">
+                                                    {img.alt}
+                                                </h3>
+                                            </div>
+                                        </motion.div>
                                     </motion.div>
-                                </motion.div>
-                            ))}
+                                );
+                            })}
                         </AnimatePresence>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -147,7 +158,7 @@ export default function GalleryPage() {
                             className="relative w-full max-w-3xl aspect-[4/3] rounded-[var(--radius-lg)] overflow-hidden"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <Image
+                            <SafeImage
                                 src={filtered[lightbox].src.replace("w=600", "w=1200")}
                                 alt={filtered[lightbox].alt}
                                 fill

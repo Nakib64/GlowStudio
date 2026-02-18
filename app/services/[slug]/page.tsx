@@ -9,6 +9,7 @@ import { ArrowRight, Clock, DollarSign, ChevronDown, ArrowLeft } from "lucide-re
 import { useState } from "react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SafeImage from "@/components/ui/SafeImage";
 import { serviceCategories } from "@/data/services";
 
 export default function ServiceDetailPage({
@@ -26,7 +27,7 @@ export default function ServiceDetailPage({
         <>
             {/* Hero */}
             <section className="relative h-[45svh] min-h-[300px] flex items-end overflow-hidden">
-                <Image
+                <SafeImage
                     src={service.heroImage}
                     alt={service.name}
                     fill
@@ -89,22 +90,33 @@ export default function ServiceDetailPage({
                             <AnimatedSection key={item.name} delay={i * 0.08}>
                                 <motion.div
                                     whileHover={{ y: -4 }}
-                                    className="bg-white rounded-[var(--radius-md)] p-7 sm:p-8 md:p-10 shadow-sm hover:shadow-lg transition-all duration-300"
+                                    className="group bg-white rounded-[var(--radius-md)] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col"
                                 >
-                                    <h3 className="font-heading text-lg font-semibold text-dark mb-2">
-                                        {item.name}
-                                    </h3>
-                                    <p className="text-text-light text-sm leading-relaxed mb-4">
-                                        {item.description}
-                                    </p>
-                                    <div className="flex items-center justify-between pt-3 border-t border-cream-dark">
-                                        <div className="flex items-center gap-1.5 text-primary text-sm font-semibold">
-                                            <DollarSign className="w-4 h-4" />
-                                            {item.price}
-                                        </div>
-                                        <div className="flex items-center gap-1.5 text-text-lighter text-xs">
-                                            <Clock className="w-3.5 h-3.5" />
-                                            {item.duration}
+                                    <div className="aspect-[16/10] relative overflow-hidden">
+                                        <SafeImage
+                                            src={item.image}
+                                            alt={item.name}
+                                            fill
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                    </div>
+                                    <div className="p-6 sm:p-8 flex flex-col flex-1">
+                                        <h3 className="font-heading text-lg font-semibold text-dark mb-2">
+                                            {item.name}
+                                        </h3>
+                                        <p className="text-text-light text-sm leading-relaxed mb-6 flex-1">
+                                            {item.description}
+                                        </p>
+                                        <div className="flex items-center justify-between pt-4 border-t border-cream-dark">
+                                            <div className="flex items-center gap-1.5 text-primary text-sm font-semibold">
+                                                <DollarSign className="w-4 h-4" />
+                                                {item.price}
+                                            </div>
+                                            <div className="flex items-center gap-1.5 text-text-lighter text-xs">
+                                                <Clock className="w-3.5 h-3.5" />
+                                                {item.duration}
+                                            </div>
                                         </div>
                                     </div>
                                 </motion.div>

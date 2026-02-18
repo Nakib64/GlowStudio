@@ -5,6 +5,7 @@ export interface ServiceItem {
     description: string;
     price: string;
     duration: string;
+    image: string;
 }
 
 export interface ServiceCategory {
@@ -30,12 +31,48 @@ export const serviceCategories: ServiceCategory[] = [
         image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
         heroImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80",
         services: [
-            { name: "Precision Haircut", description: "Custom cut tailored to your face shape and style", price: "$45–$85", duration: "45 min" },
-            { name: "Blowout & Styling", description: "Professional blowout with heat styling", price: "$35–$55", duration: "30 min" },
-            { name: "Color & Highlights", description: "Full color, balayage, or highlight techniques", price: "$120–$250", duration: "2–3 hrs" },
-            { name: "Keratin Treatment", description: "Smoothing treatment for frizz-free, shiny hair", price: "$200–$350", duration: "2–3 hrs" },
-            { name: "Deep Conditioning", description: "Intensive moisture treatment for damaged hair", price: "$40–$60", duration: "30 min" },
-            { name: "Updo & Special Styling", description: "Elegant updos for events and special occasions", price: "$75–$150", duration: "1 hr" },
+            {
+                name: "Precision Haircut",
+                description: "Custom cut tailored to your face shape and style",
+                price: "$45–$85",
+                duration: "45 min",
+                image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80"
+            },
+            {
+                name: "Blowout & Styling",
+                description: "Professional blowout with heat styling",
+                price: "$35–$55",
+                duration: "30 min",
+                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80"
+            },
+            {
+                name: "Color & Highlights",
+                description: "Full color, balayage, or highlight techniques",
+                price: "$120–$250",
+                duration: "2–3 hrs",
+                image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80"
+            },
+            {
+                name: "Keratin Treatment",
+                description: "Smoothing treatment for frizz-free, shiny hair",
+                price: "$200–$350",
+                duration: "2–3 hrs",
+                image: "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=600&q=80"
+            },
+            {
+                name: "Deep Conditioning",
+                description: "Intensive moisture treatment for damaged hair",
+                price: "$40–$60",
+                duration: "30 min",
+                image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80"
+            },
+            {
+                name: "Updo & Special Styling",
+                description: "Elegant updos for events and special occasions",
+                price: "$75–$150",
+                duration: "1 hr",
+                image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80"
+            },
         ],
         faqs: [
             { question: "How often should I get a haircut?", answer: "We recommend every 6–8 weeks for most styles. If you're growing out your hair, every 8–12 weeks for a trim to maintain healthy ends." },
@@ -53,12 +90,48 @@ export const serviceCategories: ServiceCategory[] = [
         image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
         heroImage: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=80",
         services: [
-            { name: "Classic Facial", description: "Deep cleansing facial with extraction and mask", price: "$75–$95", duration: "60 min" },
-            { name: "Anti-Aging Facial", description: "Targeted treatment to reduce fine lines and wrinkles", price: "$120–$160", duration: "75 min" },
-            { name: "Hydra Facial", description: "Multi-step treatment for deep hydration and glow", price: "$150–$200", duration: "60 min" },
-            { name: "Chemical Peel", description: "Exfoliating treatment for smoother, brighter skin", price: "$100–$180", duration: "45 min" },
-            { name: "Microdermabrasion", description: "Crystal exfoliation for refined skin texture", price: "$90–$130", duration: "45 min" },
-            { name: "LED Light Therapy", description: "Non-invasive therapy for acne and anti-aging", price: "$60–$80", duration: "30 min" },
+            {
+                name: "Classic Facial",
+                description: "Deep cleansing facial with extraction and mask",
+                price: "$75–$95",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=600&q=80"
+            },
+            {
+                name: "Anti-Aging Facial",
+                description: "Targeted treatment to reduce fine lines and wrinkles",
+                price: "$120–$160",
+                duration: "75 min",
+                image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80"
+            },
+            {
+                name: "Hydra Facial",
+                description: "Multi-step treatment for deep hydration and glow",
+                price: "$150–$200",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80"
+            },
+            {
+                name: "Chemical Peel",
+                description: "Exfoliating treatment for smoother, brighter skin",
+                price: "$100–$180",
+                duration: "45 min",
+                image: "https://images.unsplash.com/photo-1596755094514-f87034a264c6?w=600&q=80"
+            },
+            {
+                name: "Microdermabrasion",
+                description: "Crystal exfoliation for refined skin texture",
+                price: "$90–$130",
+                duration: "45 min",
+                image: "https://images.unsplash.com/photo-1505944270255-bd2b68af6422?w=600&q=80"
+            },
+            {
+                name: "LED Light Therapy",
+                description: "Non-invasive therapy for acne and anti-aging",
+                price: "$60–$80",
+                duration: "30 min",
+                image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=600&q=80"
+            },
         ],
         faqs: [
             { question: "How often should I get a facial?", answer: "For optimal results, we recommend a professional facial every 4–6 weeks to align with your skin's natural renewal cycle." },
@@ -76,12 +149,48 @@ export const serviceCategories: ServiceCategory[] = [
         image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80",
         heroImage: "https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=1200&q=80",
         services: [
-            { name: "Everyday Glam", description: "Natural, polished look for daily wear", price: "$55–$75", duration: "45 min" },
-            { name: "Evening & Party", description: "Glamorous look for nights out and events", price: "$75–$100", duration: "60 min" },
-            { name: "Editorial & Creative", description: "Bold, artistic looks for photoshoots", price: "$120–$200", duration: "75 min" },
-            { name: "Makeup Lesson", description: "One-on-one tutorial with your own products", price: "$90–$120", duration: "90 min" },
-            { name: "Lash Application", description: "Individual or strip lash application", price: "$25–$45", duration: "20 min" },
-            { name: "Airbrush Makeup", description: "Flawless, long-lasting airbrushed finish", price: "$100–$150", duration: "60 min" },
+            {
+                name: "Everyday Glam",
+                description: "Natural, polished look for daily wear",
+                price: "$55–$75",
+                duration: "45 min",
+                image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80"
+            },
+            {
+                name: "Evening & Party",
+                description: "Glamorous look for nights out and events",
+                price: "$75–$100",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=600&q=80"
+            },
+            {
+                name: "Editorial & Creative",
+                description: "Bold, artistic looks for photoshoots",
+                price: "$120–$200",
+                duration: "75 min",
+                image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80"
+            },
+            {
+                name: "Makeup Lesson",
+                description: "One-on-one tutorial with your own products",
+                price: "$90–$120",
+                duration: "90 min",
+                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80"
+            },
+            {
+                name: "Lash Application",
+                description: "Individual or strip lash application",
+                price: "$25–$45",
+                duration: "20 min",
+                image: "https://images.unsplash.com/photo-1591360236480-9c6a4cb3a6de?w=600&q=80"
+            },
+            {
+                name: "Airbrush Makeup",
+                description: "Flawless, long-lasting airbrushed finish",
+                price: "$100–$150",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80"
+            },
         ],
         faqs: [
             { question: "Should I bring my own makeup?", answer: "No need! We use high-end brands like MAC, Charlotte Tilbury, and NARS. For makeup lessons, you can bring your own products." },
@@ -99,12 +208,48 @@ export const serviceCategories: ServiceCategory[] = [
         image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80",
         heroImage: "https://images.unsplash.com/photo-1610992015732-2449b0ae4bf6?w=1200&q=80",
         services: [
-            { name: "Classic Manicure", description: "Nail shaping, cuticle care, and polish", price: "$25–$35", duration: "30 min" },
-            { name: "Gel Manicure", description: "Long-lasting, chip-resistant gel polish", price: "$40–$55", duration: "45 min" },
-            { name: "Luxury Pedicure", description: "Full foot treatment with scrub and mask", price: "$55–$75", duration: "60 min" },
-            { name: "Nail Art Design", description: "Custom artistic designs and embellishments", price: "$15–$50+", duration: "30+ min" },
-            { name: "Acrylic Extensions", description: "Full set of acrylic nail extensions", price: "$65–$100", duration: "90 min" },
-            { name: "Dip Powder", description: "Durable, lightweight dip powder nails", price: "$45–$65", duration: "45 min" },
+            {
+                name: "Classic Manicure",
+                description: "Nail shaping, cuticle care, and polish",
+                price: "$25–$35",
+                duration: "30 min",
+                image: "https://images.unsplash.com/photo-1629135096537-8324e934336c?w=600&q=80"
+            },
+            {
+                name: "Gel Manicure",
+                description: "Long-lasting, chip-resistant gel polish",
+                price: "$40–$55",
+                duration: "45 min",
+                image: "https://images.unsplash.com/photo-1610992015732-2449b0ae4bf6?w=600&q=80"
+            },
+            {
+                name: "Luxury Pedicure",
+                description: "Full foot treatment with scrub and mask",
+                price: "$55–$75",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1519415598372-e523074648ca?w=600&q=80"
+            },
+            {
+                name: "Nail Art Design",
+                description: "Custom artistic designs and embellishments",
+                price: "$15–$50+",
+                duration: "30+ min",
+                image: "https://images.unsplash.com/photo-1629135096537-8324e934336c?w=600&q=80"
+            },
+            {
+                name: "Acrylic Extensions",
+                description: "Full set of acrylic nail extensions",
+                price: "$65–$100",
+                duration: "90 min",
+                image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&q=80"
+            },
+            {
+                name: "Dip Powder",
+                description: "Durable, lightweight dip powder nails",
+                price: "$45–$65",
+                duration: "45 min",
+                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80"
+            },
         ],
         faqs: [
             { question: "How long do gel nails last?", answer: "Gel manicures typically last 2–3 weeks without chipping. We recommend removal and reapplication every 2–3 weeks." },
@@ -122,12 +267,48 @@ export const serviceCategories: ServiceCategory[] = [
         image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
         heroImage: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1200&q=80",
         services: [
-            { name: "Bridal Makeup", description: "Luxe bridal makeup with trial included", price: "$250–$400", duration: "2 hrs" },
-            { name: "Bridal Hair Styling", description: "Elegant bridal updo or styling with trial", price: "$200–$350", duration: "2 hrs" },
-            { name: "Complete Bridal Package", description: "Hair, makeup, nails, and facial combo", price: "$500–$800", duration: "Full day" },
-            { name: "Bridesmaid Package", description: "Hair and makeup for the bridal party", price: "$120–$180/person", duration: "90 min" },
-            { name: "Pre-Wedding Skin Prep", description: "Series of facials leading up to the big day", price: "$300–$500", duration: "4 sessions" },
-            { name: "Mehndi & Henna", description: "Traditional or modern henna application", price: "$100–$300", duration: "1–3 hrs" },
+            {
+                name: "Bridal Makeup",
+                description: "Luxe bridal makeup with trial included",
+                price: "$250–$400",
+                duration: "2 hrs",
+                image: "https://images.unsplash.com/photo-1546707012-c51f33032672?w=600&q=80"
+            },
+            {
+                name: "Bridal Hair Styling",
+                description: "Elegant bridal updo or styling with trial",
+                price: "$200–$350",
+                duration: "2 hrs",
+                image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80"
+            },
+            {
+                name: "Complete Bridal Package",
+                description: "Hair, makeup, nails, and facial combo",
+                price: "$500–$800",
+                duration: "Full day",
+                image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80"
+            },
+            {
+                name: "Bridesmaid Package",
+                description: "Hair and makeup for the bridal party",
+                price: "$120–$180/person",
+                duration: "90 min",
+                image: "https://images.unsplash.com/photo-1511193311914-0346f16efe90?w=600&q=80"
+            },
+            {
+                name: "Pre-Wedding Skin Prep",
+                description: "Series of facials leading up to the big day",
+                price: "$300–$500",
+                duration: "4 sessions",
+                image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=600&q=80"
+            },
+            {
+                name: "Mehndi & Henna",
+                description: "Traditional or modern henna application",
+                price: "$100–$300",
+                duration: "1–3 hrs",
+                image: "https://images.unsplash.com/photo-1582230007399-4d29388147d1?w=600&q=80"
+            },
         ],
         faqs: [
             { question: "How far in advance should I book?", answer: "We recommend booking 3–6 months ahead, especially for peak wedding season (May–October). Trial appointments should be done 1–2 months before." },
@@ -145,12 +326,48 @@ export const serviceCategories: ServiceCategory[] = [
         image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
         heroImage: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200&q=80",
         services: [
-            { name: "Swedish Massage", description: "Classic relaxation massage for full body", price: "$80–$120", duration: "60 min" },
-            { name: "Deep Tissue Massage", description: "Focused pressure on muscle tension areas", price: "$100–$140", duration: "60 min" },
-            { name: "Hot Stone Therapy", description: "Heated stones for deep muscle relaxation", price: "$120–$160", duration: "75 min" },
-            { name: "Aromatherapy", description: "Essential oil massage for holistic wellness", price: "$90–$130", duration: "60 min" },
-            { name: "Body Wrap", description: "Detoxifying or hydrating full body wrap", price: "$100–$150", duration: "75 min" },
-            { name: "Couples Massage", description: "Side-by-side massage for two", price: "$180–$260", duration: "60 min" },
+            {
+                name: "Swedish Massage",
+                description: "Classic relaxation massage for full body",
+                price: "$80–$120",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+            },
+            {
+                name: "Deep Tissue Massage",
+                description: "Focused pressure on muscle tension areas",
+                price: "$100–$140",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80"
+            },
+            {
+                name: "Hot Stone Therapy",
+                description: "Heated stones for deep muscle relaxation",
+                price: "$120–$160",
+                duration: "75 min",
+                image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80"
+            },
+            {
+                name: "Aromatherapy",
+                description: "Essential oil massage for holistic wellness",
+                price: "$90–$130",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1515600334475-258ca83d09a2?w=600&q=80"
+            },
+            {
+                name: "Body Wrap",
+                description: "Detoxifying or hydrating full body wrap",
+                price: "$100–$150",
+                duration: "75 min",
+                image: "https://images.unsplash.com/photo-1591343395902-1adcb454c2e4?w=600&q=80"
+            },
+            {
+                name: "Couples Massage",
+                description: "Side-by-side massage for two",
+                price: "$180–$260",
+                duration: "60 min",
+                image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80"
+            },
         ],
         faqs: [
             { question: "What should I wear to a massage?", answer: "You'll be provided with a robe and slippers. You undress to your comfort level — you'll be draped with sheets throughout." },
@@ -204,6 +421,14 @@ export const galleryImages = [
     { src: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80", alt: "Relaxing spa", category: "Skin" },
     { src: "https://images.unsplash.com/photo-1610992015732-2449b0ae4bf6?w=600&q=80", alt: "Nail polish collection", category: "Nails" },
     { src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80", alt: "Hair coloring", category: "Hair" },
+    { src: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&q=80", alt: "Modern Hairstyle", category: "Hair" },
+    { src: "https://images.unsplash.com/photo-1620331311520-246422ff82f9?w=600&q=80", alt: "Luxury Nails", category: "Nails" },
+    { src: "https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?w=600&q=80", alt: "Professional Facials", category: "Skin" },
+    { src: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80", alt: "Bridal Makeup", category: "Bridal" },
+    { src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80", alt: "Hair Care Products", category: "Hair" },
+    { src: "https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=600&q=80", alt: "Skin rejuvenation", category: "Skin" },
+    { src: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&q=80", alt: "Gel Nails", category: "Nails" },
+    { src: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80", alt: "Party Makeup", category: "Bridal" },
 ];
 
 export const teamMembers = [

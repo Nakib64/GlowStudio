@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Eye, Target } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SafeImage from "@/components/ui/SafeImage";
 import { teamMembers } from "@/data/services";
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
         <>
             {/* Hero */}
             <section className="relative h-[50svh] min-h-[320px] flex items-center justify-center overflow-hidden">
-                <Image
+                <SafeImage
                     src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1400&q=80"
                     alt="About GlowStudio"
                     fill
@@ -51,7 +51,7 @@ export default function AboutPage() {
                         <AnimatedSection>
                             <div className="relative">
                                 <div className="rounded-[var(--radius-lg)] overflow-hidden aspect-[4/5]">
-                                    <Image
+                                    <SafeImage
                                         src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80"
                                         alt="Our salon interior"
                                         fill
@@ -159,7 +159,7 @@ export default function AboutPage() {
                                     className="group bg-white rounded-[var(--radius-lg)] overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
                                 >
                                     <div className="relative aspect-[3/4] overflow-hidden">
-                                        <Image
+                                        <SafeImage
                                             src={member.image}
                                             alt={member.name}
                                             fill

@@ -37,7 +37,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="fixed inset-0 z-40 lg:hidden"
+                    className="fixed inset-0 z-100 lg:hidden"
                 >
                     <div className="absolute inset-0 bg-dark/60 backdrop-blur-sm" onClick={onClose} />
 
@@ -46,7 +46,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white shadow-2xl flex flex-col"
+                        className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white shadow-2xl flex flex-col gap-8"
                     >
                         {/* Mobile Header */}
                         <div className="flex items-center justify-between p-6 border-b border-cream-dark">
@@ -68,13 +68,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         </div>
 
                         {/* Mobile Links */}
-                        <div className="flex-1 overflow-y-auto pt-20 px-4">
+                        <div className="flex-1 overflow-y-auto">
                             {navLinks.map((link, i) => (
                                 <motion.div
                                     key={link.name}
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.1 + i * 0.05 }}
+                                    className="px-4"
                                 >
                                     {link.hasDropdown ? (
                                         <div>

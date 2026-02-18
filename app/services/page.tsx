@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SafeImage from "@/components/ui/SafeImage";
 import { serviceCategories } from "@/data/services";
 
 export default function ServicesPage() {
@@ -13,7 +14,7 @@ export default function ServicesPage() {
         <>
             {/* Hero */}
             <section className="relative h-[50svh] min-h-[320px] flex items-center justify-center overflow-hidden">
-                <Image
+                <SafeImage
                     src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1400&q=80"
                     alt="Our services"
                     fill
@@ -64,7 +65,7 @@ export default function ServicesPage() {
                                         className="group bg-white rounded-[var(--radius-lg)] overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500"
                                     >
                                         <div className="relative aspect-[3/2] overflow-hidden">
-                                            <Image
+                                            <SafeImage
                                                 src={service.image}
                                                 alt={service.name}
                                                 fill
