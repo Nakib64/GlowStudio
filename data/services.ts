@@ -406,6 +406,48 @@ export const testimonials = [
         text: "Walked in stressed, walked out feeling like a whole new person. The hot stone massage and facial combo was absolutely heavenly.",
         rating: 5,
     },
+    {
+        name: "Michael Chen",
+        role: "Groom Package",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+        text: "Professional, clean, and top-tier service. The stylist knew exactly what would suit me. Definitely coming back for my regular cuts.",
+        rating: 5,
+    },
+    {
+        name: "Sophie Laurent",
+        role: "VIP Member",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+        text: "The membership is the best investment I've made for my skin. Every aesthetician is knowledgeable and the premium products are incredible.",
+        rating: 5,
+    },
+    {
+        name: "David Wilson",
+        role: "Executive Styling",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+        text: "The attention to detail here is unmatched. They don't just give you a haircut; they provide a full luxury experience. 10/10.",
+        rating: 5,
+    },
+    {
+        name: "Elena Petrov",
+        role: "Skincare Addict",
+        image: "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=200&q=80",
+        text: "I've tried many luxury salons, but GlowStudio is in a league of its own. The HydraFacial results were instant and lasting.",
+        rating: 5,
+    },
+    {
+        name: "Olivia Brooks",
+        role: "Frequent Flyer",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200&q=80",
+        text: "Whenever I'm in town, this is my first stop. The staff are so welcoming and the service is always efficient yet pampering.",
+        rating: 5,
+    },
+    {
+        name: "Marcus Thorne",
+        role: "Corporate Client",
+        image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=200&q=80",
+        text: "Excellent service and a modern, high-end atmosphere. It's the perfect place to unwind after a busy week of meetings.",
+        rating: 5,
+    },
 ];
 
 export const galleryImages = [

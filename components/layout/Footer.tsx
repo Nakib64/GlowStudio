@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Sparkles, MapPin, Phone, Mail, Clock, Instagram, Facebook, Youtube } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Youtube } from "lucide-react";
 
 const quickLinks = [
     { name: "Home", href: "/" },
@@ -26,12 +27,13 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="sm:col-span-2 lg:col-span-1">
                         <Link href="/" className="flex items-center gap-2 mb-4">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                                <Sparkles className="w-5 h-5 text-white" />
-                            </div>
-                            <div>
-                                <span className="font-heading text-xl font-bold text-white">Glow</span>
-                                <span className="font-heading text-xl font-light text-primary-light">Studio</span>
+                            <div className="relative w-40 h-10">
+                                <Image
+                                    src="/logo.png"
+                                    alt="GlowStudio Logo"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                         </Link>
                         <p className="text-sm leading-relaxed text-white/60 mb-5 max-w-xs">

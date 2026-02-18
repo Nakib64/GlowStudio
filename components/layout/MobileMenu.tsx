@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronDown, Phone, Sparkles } from "lucide-react";
+import { X, ChevronDown, Phone } from "lucide-react";
+import Image from "next/image";
 import { serviceCategories } from "@/data/services";
 
 const serviceLinks = serviceCategories.map((s) => ({
@@ -51,12 +52,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         {/* Mobile Header */}
                         <div className="flex items-center justify-between p-6 border-b border-cream-dark">
                             <Link href="/" className="flex items-center gap-2" onClick={onClose}>
-                                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                                    <Sparkles className="w-4 h-4 text-white" />
+                                <div className="relative w-36 h-9">
+                                    <Image
+                                        src="/logo.png"
+                                        alt="GlowStudio Logo"
+                                        fill
+                                        className="object-contain"
+                                    />
                                 </div>
-                                <span className="font-heading text-lg font-bold text-dark">
-                                    Glow<span className="text-primary font-light">Studio</span>
-                                </span>
                             </Link>
                             <button
                                 onClick={onClose}

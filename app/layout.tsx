@@ -23,6 +23,15 @@ export const metadata: Metadata = {
   description:
     "Experience luxury beauty treatments — hair care, skin care, makeup, nail art, bridal packages, and spa services. Book your appointment at GlowStudio today.",
   keywords: "beauty salon, hair care, skin care, makeup, nail art, bridal, spa, wellness",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    title: "GlowStudio — Premium Beauty & Wellness Salon",
+    description: "Experience luxury beauty treatments at GlowStudio.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
