@@ -52,7 +52,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                         {/* Mobile Header */}
                         <div className="flex items-center justify-between p-6 border-b border-cream-dark">
                             <Link href="/" className="flex items-center gap-2" onClick={onClose}>
-                                <div className="relative w-36 h-9">
+                                <div className="relative w-40 h-20">
                                     <Image
                                         src="/logo.png"
                                         alt="GlowStudio Logo"

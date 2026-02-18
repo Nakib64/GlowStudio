@@ -19,7 +19,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "GlowStudio — Premium Beauty & Wellness Salon",
+  title: "GlowStudio — Beauty & Wellness Salon",
   description:
     "Experience luxury beauty treatments — hair care, skin care, makeup, nail art, bridal packages, and spa services. Book your appointment at GlowStudio today.",
   keywords: "beauty salon, hair care, skin care, makeup, nail art, bridal, spa, wellness",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   openGraph: {
-    title: "GlowStudio — Premium Beauty & Wellness Salon",
+    title: "GlowStudio — Beauty & Wellness Salon",
     description: "Experience luxury beauty treatments at GlowStudio.",
     images: ["/logo.png"],
   },
